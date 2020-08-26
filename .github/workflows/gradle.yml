@@ -29,3 +29,10 @@ jobs:
       with:
         name: release-jar
         path: ./build/libs/*.jar
+
+    - uses: actions/download-artifact@v2
+      with:
+        name: release-jar
+
+    - name: Display structure of downloaded files
+      run: ls -R
