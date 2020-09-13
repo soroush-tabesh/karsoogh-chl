@@ -8,13 +8,13 @@ public class Main {
             return;
         switch (args[0]) {
             case "1":
-                judge.ch1.Main.main(Arrays.copyOfRange(args, 1, args.length));
+                judge.prot1.Main.main(Arrays.copyOfRange(args, 1, args.length));
                 break;
             case "2":
-                judge.ch2.Main.main(Arrays.copyOfRange(args, 1, args.length));
+                judge.road.Main.main(Arrays.copyOfRange(args, 1, args.length));
                 break;
             case "3":
-                judge.ch3.Main.main(Arrays.copyOfRange(args, 1, args.length));
+                judge.prot2.Main.main(Arrays.copyOfRange(args, 1, args.length));
                 break;
             default:
         }

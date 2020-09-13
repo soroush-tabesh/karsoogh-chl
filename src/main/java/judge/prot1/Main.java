@@ -1,4 +1,4 @@
-package judge.ch1;
+package judge.prot1;
 
 import com.google.gson.GsonBuilder;
 import umontreal.ssj.randvar.PoissonGen;

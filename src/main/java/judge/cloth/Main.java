@@ -1,4 +1,4 @@
-package judge.ch3;
+package judge.cloth;
 
 public class Main {
     public static void main(String[] args) {
