@@ -19,13 +19,13 @@ public class Main {
     private double sellVal = 12;
     private int daysToSimulate = 100;
     private int simulationRepeat = 1000;
-    private double[] func = null;
+    private double[] func = new double[]{0, 0, 3, 0, 0};
 
     private RandomVariateGenInt dailyReqRV;
 
     private void run(String[] args) {
-        if (init(args))
-            System.out.println(simulateWithRepeat());
+        //if (init(args))
+        System.out.println(simulateWithRepeat());
     }
 
     private boolean init(String[] args) {
@@ -64,7 +64,7 @@ public class Main {
         for (int i = 0; i < daysToSimulate; i++) {
             //day i morning
             if (i < daysToSimulate - 1) {
-                fresh = old >= func.length ? 0 : func[(int) Math.round(old)];
+                fresh = func[Math.min((int) Math.round(old), func.length - 1)];
                 balance -= fresh * buyVal;
             }
 
