@@ -20,7 +20,7 @@ public class Main {
     private double buyVal = 10;
     private double sellVal = 12;
     private int daysToSimulate = 100;
-    private int simulationRepeat = 1000;
+    private int simulationRepeat = 500;
     private double[] func = new double[]{0, 0, 3, 0, 0};
     private double prob = 0.5;
     private double depomax = 1000;
@@ -30,6 +30,7 @@ public class Main {
 
     private void run(String[] args) {
         //if (init(args))
+        dailyReqRV = new PoissonGen(new MRG31k3p(), dailyReq);
         System.out.println(simulateWithRepeat());
     }
 
@@ -51,8 +52,11 @@ public class Main {
 
     private double simulateWithRepeat() {
         double avg = 0;
-        for (int i = 0; i < simulationRepeat; i++)
-            avg += simulate();
+        for (int i = 1; i <= simulationRepeat; i++) {
+            double res = simulate();
+            System.out.printf("%d, cur: %.3f, cumul: %.3f\n", i, res, avg / i);
+            avg += res;
+        }
         avg /= simulationRepeat;
         return avg;
     }
