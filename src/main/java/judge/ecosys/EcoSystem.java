@@ -7,7 +7,7 @@ public class EcoSystem {
     int maxEpoch = 15;
     double epochLength = 0.01;
     List<Creature> creatures = new ArrayList<>();
-    transient double[][] logs;
+    transient double[][] logs; // first index is epoch number, second index is creature id
 
     private void init(double[] initCount) {
         if (initCount.length != creatures.size())

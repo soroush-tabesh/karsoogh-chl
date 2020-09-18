@@ -22,7 +22,7 @@ public class Main {
 
     private void run(EcoSystem ecoSystem) {
         this.ecoSystem = ecoSystem;
-        ecoSystem.simulate(new double[]{0.3, 1.5,0.8});
+        ecoSystem.simulate(new double[]{0.3, 0.7, 0.3});
 
         XYChart chart = new XYChartBuilder().width(600).height(500).title("Ecosys").xAxisTitle("X").yAxisTitle("Y").build();
 
@@ -40,7 +40,7 @@ public class Main {
             chart.addSeries(ecoSystem.creatures.get(i).name, days, getCol(ecoSystem.logs, i));
         }
 
-        new SwingWrapper(chart).displayChart();
+        new SwingWrapper<>(chart).displayChart();
     }
 
     private double[] getCol(double[][] ar, int col) {
