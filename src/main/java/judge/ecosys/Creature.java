@@ -15,7 +15,7 @@ public class Creature {
     private final static ScriptEngine engine = new ScriptEngineManager().getEngineByName("JavaScript");
 
     public void init(){
-        Pattern p = Pattern.compile("\\{(\\d)}");
+        Pattern p = Pattern.compile("\\{(\\d+)}");
         matcher = p.matcher(equation);
     }
 
